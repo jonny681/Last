@@ -149,7 +149,7 @@ export const Header: React.FC<HeaderProps> = ({
                 {currentCountry === 'DE' ? 'Antrag stellen' : 'Apply to Acquire'}
               </a>
 
-              {/* Web App Direct Navigation */}
+              {/* Aureus Direct Navigation */}
               {onOpenDashboard && (
                 <button
                   type="button"
@@ -227,7 +227,7 @@ export const Header: React.FC<HeaderProps> = ({
                 )}
               </div>
 
-              {/* Direct Web App Access Button */}
+              {/* Direct Aureus Access Button */}
               {onOpenDashboard && (
                 <button
                   type="button"

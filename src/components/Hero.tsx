@@ -236,7 +236,7 @@ export const Hero: React.FC<HeroProps> = ({
                   className="py-2.5 px-3 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200 transition-all flex items-center justify-center gap-1.5 cursor-pointer active:scale-95"
                 >
                   <Wallet className="w-3.5 h-3.5 text-blue-600" />
-                  <span>Open in Web App</span>
+                  <span>Open Aureus</span>
                 </button>
               </div>
 

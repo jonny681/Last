@@ -680,7 +680,7 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({
             type="button"
             onClick={onClose}
             className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-all cursor-pointer shadow-xs border border-slate-200 shrink-0 active:scale-95"
-            title="Cancel and close web app"
+            title="Cancel and close Aureus portal"
           >
             <X className="w-4 h-4 text-slate-600" />
             <span>Cancel</span>
@@ -3840,7 +3840,7 @@ export const UserDashboard: React.FC<UserDashboardProps> = ({
         {/* IN-APP MOBILE BOTTOM NAVIGATION BAR (DEDICATED DOCK)     */}
         {/* ======================================================== */}
         <nav
-          aria-label="Web App Mobile Navigation"
+          aria-label="Aureus Mobile Navigation"
           className="md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md px-1 py-1.5 flex items-center justify-around shrink-0 z-20"
         >
           {[
