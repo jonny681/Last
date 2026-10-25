@@ -1,0 +1,103 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile information stored upon authentication",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "email": { "type": "string" },
+        "fullName": { "type": "string" },
+        "phone": { "type": "string" },
+        "role": { "type": "string", "enum": ["client", "admin"] },
+        "country": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "email", "fullName", "role", "createdAt"]
+    },
+    "LoanApplication": {
+      "title": "LoanApplication",
+      "description": "Prime home mortgage, automotive loan, or direct cash loan facility",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "loanType": { "type": "string", "enum": ["home", "car", "cash"] },
+        "assetTitle": { "type": "string" },
+        "assetPrice": { "type": "number" },
+        "downPayment": { "type": "number" },
+        "financedAmount": { "type": "number" },
+        "termMonths": { "type": "number" },
+        "monthlyPayment": { "type": "number" },
+        "interestRate": { "type": "number" },
+        "applicantName": { "type": "string" },
+        "applicantEmail": { "type": "string" },
+        "applicantPhone": { "type": "string" },
+        "sovereignId": { "type": "string" },
+        "disbursementMethod": { "type": "string" },
+        "bankName": { "type": "string" },
+        "accountNumber": { "type": "string" },
+        "status": { "type": "string" },
+        "submittedAt": { "type": "string" }
+      },
+      "required": ["id", "loanType", "financedAmount", "applicantName", "applicantEmail", "status", "submittedAt"]
+    },
+    "InvestmentAllocation": {
+      "title": "InvestmentAllocation",
+      "description": "Institutional asset-backed passive wealth note allocation",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "tierId": { "type": "string" },
+        "tierName": { "type": "string" },
+        "principalAmount": { "type": "number" },
+        "durationMonths": { "type": "number" },
+        "ratePercent": { "type": "number" },
+        "totalYield": { "type": "number" },
+        "monthlyPayout": { "type": "number" },
+        "investorName": { "type": "string" },
+        "investorEmail": { "type": "string" },
+        "investorPhone": { "type": "string" },
+        "bankName": { "type": "string" },
+        "accountNumber": { "type": "string" },
+        "status": { "type": "string" },
+        "submittedAt": { "type": "string" }
+      },
+      "required": ["id", "principalAmount", "durationMonths", "investorName", "investorEmail", "status", "submittedAt"]
+    },
+    "ChatMessage": {
+      "title": "ChatMessage",
+      "description": "Live real-time underwriter communication message",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "userId": { "type": "string" },
+        "sender": { "type": "string", "enum": ["user", "admin"] },
+        "senderName": { "type": "string" },
+        "text": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["id", "userEmail", "sender", "senderName", "text", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Registered user profile records"
+    },
+    "/loans/{loanId}": {
+      "schema": "LoanApplication",
+      "description": "Loan pre-approvals, mortgages, and cash loan records"
+    },
+    "/investments/{investmentId}": {
+      "schema": "InvestmentAllocation",
+      "description": "Institutional investment allocations and wealth facilities"
+    },
+    "/chat_messages/{messageId}": {
+      "schema": "ChatMessage",
+      "description": "Real-time underwriter chat messages"
+    }
+  }
+}

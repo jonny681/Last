@@ -1,0 +1,6 @@
+{
+  "name": "Aureus Prestige | International Home & Car Loan Comparison",
+  "description": "Direct institutional balance sheet lending for prime homes and luxury vehicles across the UK, Canada, Australia, and Germany. 10% upfront payment to acquire.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
