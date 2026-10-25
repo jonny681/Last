@@ -33,7 +33,7 @@ export const InvestmentPlans: React.FC<InvestmentPlansProps> = ({
   const country = COUNTRIES[currentCountry];
   const isGerman = currentCountry === 'DE';
 
-  const [selectedDuration, setSelectedDuration] = useState<6 | 12>(12);
+  const [selectedDuration, setSelectedDuration] = useState<6 | 12>(6);
   const [selectedPrice, setSelectedPrice] = useState<10000 | 25000 | 50000 | 100000>(25000);
   const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
   const [modalTierPrice, setModalTierPrice] = useState<number>(25000);
@@ -92,17 +92,6 @@ export const InvestmentPlans: React.FC<InvestmentPlansProps> = ({
             <div className="inline-flex p-1 rounded-2xl bg-slate-100 border border-slate-200">
               <button
                 type="button"
-                onClick={() => setSelectedDuration(12)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                  selectedDuration === 12
-                    ? 'bg-slate-900 text-white shadow-xs'
-                    : 'text-slate-700 hover:text-slate-900 hover:bg-slate-200/60'
-                }`}
-              >
-                12 Months Facility (Max Yield)
-              </button>
-              <button
-                type="button"
                 onClick={() => setSelectedDuration(6)}
                 className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                   selectedDuration === 6
@@ -111,6 +100,17 @@ export const InvestmentPlans: React.FC<InvestmentPlansProps> = ({
                 }`}
               >
                 6 Months Facility (Faster Liquidity)
+              </button>
+              <button
+                type="button"
+                onClick={() => setSelectedDuration(12)}
+                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+                  selectedDuration === 12
+                    ? 'bg-slate-900 text-white shadow-xs'
+                    : 'text-slate-700 hover:text-slate-900 hover:bg-slate-200/60'
+                }`}
+              >
+                12 Months Facility (Max Yield)
               </button>
             </div>
             <span className="text-xs font-mono text-slate-800 font-semibold bg-slate-100 px-2.5 py-1 rounded-lg border border-slate-200">
